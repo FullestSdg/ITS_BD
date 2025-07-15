@@ -30,7 +30,7 @@ from Persona
 where persona.posizione = 'Professore Ordinario'
 AND cognome like 'V%';
 
--- Ma in teoria neanche esistono come dati (credo) | Anche se credo il mio metodo sia pur sempre sbagliato :/
+-- Ma in teoria neanche esistono come dati (credo) | Anche se penso il mio metodo sia pur sempre sbagliato :/
 
 -- 5. Quali sono i Progetti già terminati alla data odierna?
 
