@@ -40,9 +40,11 @@ where ArrPart.partenza = 'FCO' AND ArrPart.arrivo = 'JFK';
 
 
 
+
 -- 8. Quali sono gli aeroporti (con codice IATA, nome e luogo) nei quali partono voli della compagnia di nome ‘MagicFly’?
 
 
 
 
 -- 9 9. Quali sono i voli che partono da un qualunque aeroporto della città di ‘Roma’ e atterrano ad un qualunque aeroporto della città di ‘New York’? Restituire: codice del volo, nome della compagnia, e aeroporti di partenza e arrivo.
+
