@@ -29,7 +29,5 @@ create table Progetto(
 );
 
 create table NumeroTelefono(
-    telefono Stringa primary key 
-
-    unique (telefono)
+    telefono Stringa primary key
 );
