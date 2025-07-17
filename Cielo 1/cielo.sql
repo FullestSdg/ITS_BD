@@ -70,18 +70,6 @@ create table ArrPart (
 commit;
 
 
--- Interrogazioni
-
--- 1 
-select codice, comp
-from Volo
-where durataMinuti > 180;
-
--- 2
-select comp 
-from Volo 
-where durataMinuti > 180;
-
 
 
 
