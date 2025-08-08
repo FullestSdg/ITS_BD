@@ -58,4 +58,4 @@ create table Reponsabile (
 create table Progetto (
     nome varchar not null,
     id integer primary key
-);
+); 
