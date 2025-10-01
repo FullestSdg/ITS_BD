@@ -15,5 +15,18 @@ create domain IntGEZ as integer
 create domain IntGE2 as integer 
     check (value >= 2);
 
+create domain DataOra as datetime;
+
 create domain URL as text; -- https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url
 
+create type Condizione as 
+    enum ('Non mi ricordo cosa metterci');
+
+create type TipoUtente as 
+    enum ('Privato', 'VenditoreProf');
+
+create type TipoPostOggetto as
+    enum ('PostOggettoAsta', 'PostOggettoCompraloSubito');
+
+create type TipoPostOggetto2 as 
+    enum ('PostOggettoNuovo', 'PostOggettoUsato');
