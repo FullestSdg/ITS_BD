@@ -20,7 +20,7 @@ create domain DataOra as datetime;
 create domain URL as text; -- https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url
 
 create type Condizione as 
-    enum ('Non mi ricordo cosa metterci');
+    enum ('');
 
 create type TipoUtente as 
     enum ('Privato', 'VenditoreProf');
