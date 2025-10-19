@@ -4,6 +4,7 @@ set constraints all deferred;
 
 
 
+
 INSERT INTO Aeroporto(codice, nome) VALUES
 ('JFK'	,'JFK Airport'),
 ('FCO'	,'Aeroporto di Roma Fiumicino'),
@@ -23,13 +24,15 @@ INSERT INTO ArrPart(codice, comp, arrivo, partenza) VALUES
 ('535',	'Apitalia',		'FCO',	'HTR'),
 ('134',	'MagicFly',		'JFK',	'FCO'),
 ('265',	'Caimanair',	'JFK',	'FCO'),
-('536',	'Apitalia',		'JFK',	'FCO');
+('536',	'Apitalia',		'JFK',	'FCO'),
+('777',	'TestMio',      'FCO',  'JFK');
 
 
 INSERT INTO Compagnia(nome, annofondaz) VALUES
 ('Caimanair', '1954'),
 ('Apitalia', '1900'),
-('MagicFly', '1990');
+('MagicFly', '1990'),
+('TestMio', '1899');
 
 
 INSERT INTO LuogoAeroporto(aeroporto, citta, nazione) VALUES
@@ -51,7 +54,8 @@ INSERT INTO Volo(codice, comp, durataMinuti) VALUES
 ('535',	'Apitalia',		'150'),
 ('134',	'MagicFly',		'600'),
 ('265',	'Caimanair',	'601'),
-('536',	'Apitalia',		'599');
+('536',	'Apitalia',		'599'),
+('132', 'TestMio',      '679');
 
 
 commit;
