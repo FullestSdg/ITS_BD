@@ -22,7 +22,7 @@ create domain Denaro as real
     check (value >= 0);
 
 create table Persona (
-    id PosInteger primary key
+    id PosInteger primary key,
     nome StringaM not null,
     cognome StringaM not null,
     posizione Strutturato not null,
@@ -37,42 +37,41 @@ create table Progetto (
     fine date not null,
     budget Denaro not null,
 
-    unique nome
+    unique(nome)
 );
 
 create table WP (
-    progetto PosInteger primary key,
-    id PosInteger primary key, 
+    progetto PosInteger not null,
+    id PosInteger not null, 
     inizio date not null,
-        check(inizio < fine)
+        check(inizio < fine),
     fine date not null,
 
-    unique progetto
-    unique nome 
-    foreign key progetto references Progetto(id)
+    primary key(id, progetto),
+    foreign key (progetto) references Progetto(id)
 );
 
-create table AttivitàProgetto(
+create table AttivitaProgetto(
     id PosInteger primary key,
     persona PosInteger not null,
     progetto PosInteger not null,
     wp PosInteger not null,
-    giorno date  not null,
+    giorno date not null,
     tipo LavoroProgetto not null,
-    oreDurata: NumeroOre not null,
+    oreDurata NumeroOre not null,
 
-    foreign key persona references Persona(id)
-    foreign key (progetto, wp) references (progetto, id)
+    foreign key (persona) references Persona(id),
+    foreign key (progetto, wp) references WP(progetto, id)
 );
 
-create table AttivitàNonProgettuale (
+create table AttivitaNonProgettuale (
     id PosInteger primary key,
     persona PosInteger not null,
     tipo LavoroNonProgettuale not null,
     giorno date not null,
     oreDurata NumeroOre not null,
 
-    foreign key persona references Persona(id)
+    foreign key (persona) references Persona(id)
 );
 
 create table Assenza (
@@ -81,8 +80,8 @@ create table Assenza (
     tipo CausaAssenza not null,
     giorno date not null,
 
-    unique persona 
-    unique giorno 
+    unique(persona), 
+    unique(giorno), 
 
-    foreign key persona references Persona(id)
+    foreign key(persona) references Persona(id)
 );
