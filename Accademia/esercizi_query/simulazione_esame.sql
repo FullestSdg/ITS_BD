@@ -98,5 +98,8 @@ select Persona.id, sum(AttivitaProgetto.oreDurata) as somma_totale
 
 select Persona.id as id_persona, Persona.nome as nome_persona
     from Persona, Assenza 
-    where NOT EXISTS (Assenza.tipo = 'Chiusura Universitaria')
-    group by Persona.id, Persona.nome, Persona.cognome;
+    where Persona.id NOT IN (
+        select Persona 
+        from Assenza 
+        where Assenza.tipo = 'Chiusura Universitaria'
+    );
