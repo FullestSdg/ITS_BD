@@ -73,3 +73,8 @@ WHERE O.id = OA.opera             -- Ponte Opera-Autore
 
 -- Città d'Arte: Restituire il nome delle città che hanno dato i natali a più di 2 artisti presenti nel database.
 
+select c.nome
+    from città as c, artista as art
+    where art.città_nascita = c.id
+group by c.id, c.nome 
+having count(art.id) >= 2;
